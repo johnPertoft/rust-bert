@@ -36,6 +36,7 @@ if __name__ == "__main__":
         else:
             print(f'skipped non-tensor object: {k}')
     np.savez(target_folder / 'model.npz', **nps)
+    del nps
 
     source = str(target_folder / 'model.npz')
     target = str(target_folder / 'rust_model.ot')
